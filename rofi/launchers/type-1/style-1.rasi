@@ -21,7 +21,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/launchers/type-1/shared/colors-transparent.rasi"
+@import "~/.config/rofi/launchers/type-1/shared/colors.rasi"
 @import "~/.config/rofi/launchers/type-1/shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
@@ -37,7 +37,7 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               15px;
+    border-radius:               10px;
     border:                      3px;
     border-color:                @active;
     cursor:                      "default";
@@ -102,12 +102,12 @@ entry {
 /*****----- Mode Switcher -----*****/
 mode-switcher{
     enabled:                     true;
-    spacing:                     20px;
+    spacing:                     10px;
     background-color:            transparent;
     text-color:                  @foreground;
 }
 button {
-    padding:                     15px;
+    padding:                     10px;
     border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  inherit;
