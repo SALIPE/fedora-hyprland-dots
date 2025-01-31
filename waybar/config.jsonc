@@ -1,0 +1,135 @@
+/***
+ *    ┓ ┏┏┓┓┏┳┓┏┓┳┓  ┏┓┏┓┳┓┏┓┳┏┓
+ *    ┃┃┃┣┫┗┫┣┫┣┫┣┫  ┃ ┃┃┃┃┣ ┃┃┓
+ *    ┗┻┛┛┗┗┛┻┛┛┗┛┗  ┗┛┗┛┛┗┻ ┻┗┛
+ *                              
+ */
+{
+  "layer": "top",
+  "position": "top",
+  "modules-center": [],
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "tray",
+    "battery",
+    "custom/notification",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+      "urgent": " "
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "clock": {
+    "format": " {:L%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/window": {
+    "max-length": 22,
+    "icon": true,
+    "icon-size": 20,
+    "separate-outputs": false,
+    "rewrite": {
+      "": "  No Windows "
+    }
+  },
+  "disk": {
+    "format": " {free}",
+    "tooltip": true
+  },
+  "tray": {
+    "spacing": 12
+  },
+  "pulseaudio": {
+    "format": "{icon}   {volume}  {format_source}",
+    "format-bluetooth": "{icon} {volume}  {format_source}",
+    "format-bluetooth-muted": "{icon} {format_source}",
+    "format-muted": "󰝟",
+    "format-source": " {volume} ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": [
+        " ",
+        " ",
+        " "
+      ],
+      "handsfree": "󰴸",
+      "headset": [
+        " ",
+        " ",
+        " "
+      ],
+      "phone": [
+        " ",
+        " ",
+        " "
+      ],
+      "portable": [
+        " ",
+        " ",
+        " "
+      ],
+      "car": [
+        " ",
+        " ",
+        " "
+      ],
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "sleep 0.1 && pavucontrol"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄 ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ],
+  }
+}
