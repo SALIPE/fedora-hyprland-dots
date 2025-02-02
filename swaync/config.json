@@ -69,7 +69,7 @@
     },
     "backlight": {
       "label": "󰃟 ",
-      "device": "amdgpu_bl2"
+      "device": "intel_backlight"
     },
     "buttons-grid": {
       "actions": [

@@ -7,10 +7,14 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-center": [],
+  "modules-center": [
+    "custom/spotify"
+    
+  ],
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/window",
+    "wlr/taskbar"
   ],
   "modules-right": [
     "pulseaudio",
@@ -19,6 +23,18 @@
     "custom/notification",
     "clock"
   ],
+  "custom/spotify": {
+      "exec": "~/.config/hypr/scripts/songdetail.sh",
+      "exec-if": "pgrep spotify",
+      "interval": 1,
+      "on-click-middle": "playerctl --player=spotify play-pause",
+      "on-click-right": "playerctl next --player spotify",
+      "on-click": "playerctl previous --player spotify",
+      "on-scroll-up": "volumecontrol.sh -p spotify i",
+      "on-scroll-down": "volumecontrol.sh -p spotify d",
+      "escape": true,
+      "tooltip": false
+  },
   "hyprland/workspaces": {
     "format": "{name}",
     "format-icons": {
@@ -30,7 +46,7 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "clock": {
-    "format": " {:L%H:%M}",
+    "format": "  {:L%H:%M}",
     "tooltip": true,
     "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>"
   },
@@ -40,7 +56,7 @@
     "icon-size": 20,
     "separate-outputs": false,
     "rewrite": {
-      "": "  No Windows "
+      "": "   No Windows"
     }
   },
   "disk": {
@@ -48,7 +64,8 @@
     "tooltip": true
   },
   "tray": {
-    "spacing": 12
+    "spacing": 12,
+    // "show-passive-items": true
   },
   "pulseaudio": {
     "format": "{icon}   {volume}  {format_source}",
@@ -131,5 +148,25 @@
       "󰂂",
       "󰁹"
     ],
+  },
+
+  "wlr/taskbar": {
+      "format": "{icon}",
+      "rotate": 0,
+      "icon-size": 18,
+      "icon-theme": "Tela-circle-dracula",
+      "spacing": 0,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "cursor":true,
+      "ignore-list": [
+          "kitty",
+          "Spotify",
+          "discord"
+      ],
+      "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+      }
   }
 }

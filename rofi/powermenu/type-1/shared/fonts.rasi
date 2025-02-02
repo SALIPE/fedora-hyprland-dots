@@ -1,11 +1,12 @@
-/***
- *    ┏┓┏┓┳┓┏┳┓┏┓
- *    ┣ ┃┃┃┃ ┃ ┗┓
- *    ┻ ┗┛┛┗ ┻ ┗┛
- *               
- */
-
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Fonts
+ *
+ **/
 
 * {
-    font: "JetBrainsMono Nerd Font Bold 12";
+    font: "JetBrains Mono Nerd Font 10";
 }

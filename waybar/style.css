@@ -14,7 +14,7 @@
   font-size: 14px;
   border-radius: 0px;
   border: none;
-  min-height: 0px;
+  min-height: 5px;
 }
 
 window#waybar {
@@ -73,6 +73,28 @@ window#waybar {
   transition: all 0.2s ease-in-out;
 }
 
+#taskbar button {
+    padding: 0px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 0px;
+    color: @color0;
+}
+
+#taskbar button.active {
+    color: @color0;
+    opacity: 1.0;
+    margin-left: 3px;
+    padding: 0px;
+    margin-right: 3px;
+}
+
+
+
 tooltip {
   background: @color0;
   border: 1px solid @color4;
@@ -83,19 +105,37 @@ tooltip label {
   color: @color8;
 }
 
-#window, #cpu, #memory, #idle_inhibitor {
+#window {
   font-weight: bold;
   margin: 4px 0px;
   margin-left: 7px;
   padding: 0px 18px;
   background: @color4;
   color: @color0;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 
-#custom-pacman, #network, #battery, #custom-notification, #tray, #custom-exit, #pulseaudio {
+#custom-spotify {
+    font-weight: bold;
+    margin: 4px 0px;
+    margin-left: 7px;
+    padding: 0px 18px;
+    background: @color4;
+    color: @color0;
+    border-radius: 10px;
+}
+
+#taskbar {
+    color: @color0;
+    background: @color4;
+    margin: 4px 0px;
+    padding: 5px 5px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#network, #battery, #custom-notification, #tray, #custom-exit, #pulseaudio {
   font-weight: bold;
-  background: @color6;
+  background: @color4;
   color: @color0;
   margin: 2px 0px;
   margin-right: 5px;
