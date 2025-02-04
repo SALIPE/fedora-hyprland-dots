@@ -46,9 +46,12 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "clock": {
-    "format": "  {:L%H:%M}",
+    "interval":1,
+    "format": "🕒 {:L%H:%M:%S - %d, %B} 📆",
     "tooltip": true,
-    "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "gnome-calendar",
+    "cursor":true
   },
   "hyprland/window": {
     "max-length": 22,
@@ -56,7 +59,7 @@
     "icon-size": 20,
     "separate-outputs": false,
     "rewrite": {
-      "": "   No Windows"
+      "": "  No Windows"
     }
   },
   "disk": {
