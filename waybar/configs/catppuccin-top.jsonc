@@ -1,0 +1,68 @@
+{
+    "include": [
+        "$HOME/.config/waybar/modules/modules-catppuccin.jsonc",
+        "$HOME/.config/waybar/modules/modules-custom.jsonc"
+    ],
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": true,
+    "height": 20,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/launch_rofi",
+        "hyprland/window", 
+        "wlr/taskbar",
+        
+    ],
+
+    "modules-center": [
+        "custom/spotify"
+    ],
+
+    "modules-right": [ 
+        "tray", 
+        "pulseaudio", 
+        "memory", 
+        "idle_inhibitor", 
+        "custom/clipboard", 
+        "battery", 
+        "backlight",
+        "custom/notification",
+        "clock"
+
+    ],
+    "custom/spotify": {
+        "exec": "~/.config/hypr/scripts/songdetail.sh",
+        "exec-if": "pgrep spotify",
+        "interval": 1,
+        "on-click-middle": "playerctl --player=spotify play-pause",
+        "on-click-right": "playerctl next --player spotify",
+        "on-click": "playerctl previous --player spotify",
+        "escape": true,
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+          },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": []
+        }
+    }
+}

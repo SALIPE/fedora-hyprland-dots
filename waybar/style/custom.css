@@ -1,0 +1,144 @@
+/***
+ *    ┓ ┏┏┓┓┏┳┓┏┓┳┓  ┏┓┏┓┏┓
+ *    ┃┃┃┣┫┗┫┣┫┣┫┣┫  ┃ ┗┓┗┓
+ *    ┗┻┛┛┗┗┛┻┛┛┗┛┗  ┗┛┗┛┗┛
+ *                         
+ */
+
+
+
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 14px;
+  border-radius: 0px;
+  border: none;
+  min-height: 5px;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+  color: @color0;
+  background: @color0;
+  margin: 4px 4px;
+  padding: 5px 5px;
+  border-radius: 16px;
+}
+
+#workspaces button {
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color4);
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color4);
+  transition: all 0.2s ease-in-out;
+  opacity: 1.0;
+  min-width: 40px;
+}
+
+#workspaces button.urgent {
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color12);
+  transition: all 0.2s ease-in-out;
+  opacity: 1.0;
+  min-width: 40px;
+}
+
+#workspaces button:hover {
+  font-weight: bold;
+  border-radius: 16px;
+  color: @color0;
+  background: linear-gradient(45deg, @color8, @color4);
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+#taskbar button {
+  padding: 0px;
+  border-radius: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-right: 0px;
+  color: @color0;
+}
+
+#taskbar button.active {
+  color: @color0;
+  opacity: 1.0;
+  margin-left: 3px;
+  padding: 0px;
+  margin-right: 3px;
+}
+
+
+
+tooltip {
+  background: @color0;
+  border: 1px solid @color6;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @color8;
+}
+
+#window {
+  font-weight: bold;
+  margin: 4px 0px;
+  margin-left: 4px;
+  padding: 0px 18px;
+  background: @color6;
+  color: @color0;
+  border-radius: 16px 0px 0px 16px;
+}
+
+#custom-spotify {
+  font-weight: bold;
+  margin: 4px 0px;
+  padding: 0px 18px;
+  background: @color6;
+  color: @color0;
+  border-radius: 16px;
+}
+
+#taskbar {
+  color: @color0;
+  background: @color6;
+  margin: 4px 0px;
+  padding: 5px 5px;
+  border-radius: 0px 16px 16px 0px;
+}
+
+#network, #battery, #custom-notification, #tray, #custom-exit, #pulseaudio, #clock {
+  font-weight: bold;
+  background: @color6;
+  color: @color0;
+  margin: 4px 0px;
+  margin-right: 5px;
+  border-radius: 16px;
+  padding: 0px 20px;
+  min-width: 15px;
+}

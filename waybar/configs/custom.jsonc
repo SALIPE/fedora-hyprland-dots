@@ -46,8 +46,7 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "clock": {
-    "interval":1,
-    "format": "🕒 {:L%H:%M:%S - %d, %B} 📆",
+    "format": "🕒 {:L%H:%M - %d, %B} 📆",
     "tooltip": true,
     "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "gnome-calendar",

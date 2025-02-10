@@ -1,0 +1,236 @@
+{
+    // all the modules
+
+    // Defaults 👇
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Tela-circle-dracula",
+        "spacing": 0,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list":[
+            "Spotify",
+            "discord"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        }
+    },
+
+    // network
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰌘",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 2,
+        "max-length": 30,
+    	"format-icons": [
+    		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+    	],
+        "on-click-right": "kitty -e nmtui"
+    },
+
+    // network speed
+    "network#speed": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-disconnected": "󰖪 ",
+        "tooltip": false,
+        "interval": 1,
+        "max-length": 30,
+    	"format-icons": [
+    		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+    	],
+        "on-click-right": "kitty -e nmtui"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "start-activated": true,
+            "format-icons": {
+                "activated": "",
+                "deactivated": "󰛊"
+            },
+        "tooltip-format-activated":"Caffeine Mode: Active \nNothing will be happen.",
+        "tooltip-format-deactivated":"Caffeine Mode: Inactive\n\nIf there is no interaction with your\nsystem (mouse/keyboard), then \nScreen Lock: after 5 min \nScreen Off: after 10 min \nSleep: after 30 min"
+    },
+
+
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*)salipe@fedora-salipe:(.*)": "$2  ",
+            "(.*) - Visual Studio Code": "$1 󰨞",
+            "(.*)Visual Studio Code": "$1 Code 󰨞",
+            "(.*)Spotify.*": "$1 Spotify 󰓇",
+            "(.*) - Discord": "$1  ",
+        },
+        "max-length": 40
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": []
+      }
+    },
+    "memory": {
+        "interval": 2,
+        "format": "󰾅 {used}GB",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+    },
+
+    "backlight": {
+        "interval": 2,
+        "align": 0,
+        "rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            "󰃝 ",
+            "󰃞 ",
+            "󰃟 ",
+            "󰃠 "
+        ],
+        "tooltip-format": "backlight {percent}%",
+        "icon-size": 10,
+        "on-click": "",
+        "on-click-middle": "",
+        "on-click-right": "",
+        "on-update": "",
+        "on-scroll-up": "~/.config/hypr/scripts/brightness.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness.sh down",
+        "smooth-scrolling-threshold": 1
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:%R 󰃭 %d·%m·%Y}",
+        "on-clock-right": "exec gnome-calendar",
+        "tooltip": true,
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
+    },
+
+    "battery": {
+	"interval": 20,
+	"align": 0,
+	"rotate": 0,
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 20
+	},
+	"format": "{icon} {capacity}%",
+	"format-charging": " {capacity}%",
+	"format-plugged": "󱘖 {capacity}%",
+	"format-alt-click": "click",
+	"format-full": "{icon} Full",
+	"format-alt": "{icon} {time}",
+	"format-icons": [
+		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+	    ],
+	"format-time": "{H}h {M}min",
+	"tooltip": true,
+	"tooltip-format": "{timeTo} {power}w"
+    },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}  {format_source}",
+    "format-bluetooth": "{icon} {volume}  {format_source}",
+    "format-bluetooth-muted": "{icon} {format_source}",
+    "format-muted": "󰝟",
+    "format-source": " {volume} ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": [
+        " ",
+        " ",
+        " "
+      ],
+      "handsfree": "󰴸",
+      "headset": [
+        " ",
+        " ",
+        " "
+      ],
+      "phone": [
+        " ",
+        " ",
+        " "
+      ],
+      "portable": [
+        " ",
+        " ",
+        " "
+      ],
+      "car": [
+        " ",
+        " ",
+        " "
+      ],
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "sleep 0.1 && pavucontrol"
+  },   
+
+
+    // custom modules 👇
+    "custom/launch_rofi": {
+        "format": "󰣛",   // for fedora
+        "on-click": "~/.config/rofi/launchers/type-7/launcher.sh",
+        "tooltip": false
+    },
+
+
+}
