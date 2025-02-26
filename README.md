@@ -23,13 +23,16 @@ This configuration was maded using other repositories configuration:
 - Spotify
 - Zen Browser
 - nm-applet
+- blueman-manager
 - Rofi
+- nemo file-manager
 - Waybar
-- Hyprpaper
+- Hypridle
 - Hyprlock
 - htop
 - Waypaper
 - SwayNC
 - Pavucontrol
+- pamixer
 - Obsidian
 - cliphist
