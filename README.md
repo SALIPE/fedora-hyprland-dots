@@ -14,9 +14,9 @@ This configuration was maded using other repositories configuration:
 ## Screenshots
 ![screenshot](prints/wallpaper.png)
 
-| ![screenshot](prints/rofi.png) | ![screenshot](prints/windows.png)) |
+| ![screenshot](prints/rofi.png) | ![screenshot](prints/windows.png) |
 |---|---|
-| ![screenshot](prints/rofisystem.png) | ![screenshot](prints/notification.png)) |
+| ![screenshot](prints/rofisystem.png) | ![screenshot](prints/notifcation.png) |
 
 
 ## Installed Programs
