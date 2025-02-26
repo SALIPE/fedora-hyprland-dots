@@ -4,33 +4,36 @@
         "$HOME/.config/waybar/modules/modules-custom.jsonc"
     ],
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
-    "height": 20,
-    "margin-top": 5,
-    "margin-left": 10,
-    "margin-right": 10,
+    "height": 25,
+    "margin-top": 0,
+    "padding-bottom": 5,
+    "margin-left": 5,
+    "margin-right": 5,
 
     "modules-left": [
-        "hyprland/workspaces",
         "custom/launch_rofi",
         "hyprland/window", 
         "wlr/taskbar",
-        
+        "custom/spotify"
+
     ],
 
     "modules-center": [
-        "custom/spotify"
+        "hyprland/workspaces",
+
     ],
 
     "modules-right": [ 
         "tray", 
-        "pulseaudio", 
         "memory", 
+        "pulseaudio",
+        "pulseaudio#microphone",
         "idle_inhibitor", 
         "custom/clipboard", 
         "battery", 

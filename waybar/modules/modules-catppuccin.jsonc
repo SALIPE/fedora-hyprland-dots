@@ -1,6 +1,5 @@
 {
     // all the modules
-
     // Defaults 👇
     "wlr/taskbar": {
         "format": "{icon}",
@@ -10,7 +9,8 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "ignore-list":[
+        "ignore-list": [
+            "kitty",
             "Spotify",
             "discord"
         ],
@@ -18,7 +18,6 @@
             "firefoxdeveloperedition": "firefox-developer-edition"
         }
     },
-
     // network
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -30,12 +29,15 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 2,
         "max-length": 30,
-    	"format-icons": [
-    		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
-    	],
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
         "on-click-right": "kitty -e nmtui"
     },
-
     // network speed
     "network#speed": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -44,54 +46,63 @@
         "tooltip": false,
         "interval": 1,
         "max-length": 30,
-    	"format-icons": [
-    		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
-    	],
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
         "on-click-right": "kitty -e nmtui"
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "start-activated": true,
-            "format-icons": {
-                "activated": "",
-                "deactivated": "󰛊"
-            },
-        "tooltip-format-activated":"Caffeine Mode: Active \nNothing will be happen.",
-        "tooltip-format-deactivated":"Caffeine Mode: Inactive\n\nIf there is no interaction with your\nsystem (mouse/keyboard), then \nScreen Lock: after 5 min \nScreen Off: after 10 min \nSleep: after 30 min"
-    },
-
-
-
-    "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true,
-        "rewrite": {
-            "(.*)salipe@fedora-salipe:(.*)": "$2  ",
-            "(.*) - Visual Studio Code": "$1 󰨞",
-            "(.*)Visual Studio Code": "$1 Code 󰨞",
-            "(.*)Spotify.*": "$1 Spotify 󰓇",
-            "(.*) - Discord": "$1  ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "󰛊"
         },
-        "max-length": 40
+        "tooltip-format-activated": "Caffeine Mode: Active \nNothing will be happen.",
+        "tooltip-format-deactivated": "Caffeine Mode: Inactive\n\nIf there is no interaction with your\nsystem (mouse/keyboard), then \nScreen Lock: after 5 min \nScreen Off: after 10 min \nSleep: after 30 min"
     },
-
+    "hyprland/window": {
+        "max-length": 22,
+        "icon": false,
+        "icon-size": 20,
+        "separate-outputs": false,
+        "rewrite": {
+            "": "  No Windows",
+            "(.*)salipe@fedora-salipe:(.*)": "$2  "
+            // "(.*) - Visual Studio Code": "$1 󰨞",
+            // "(.*)Visual Studio Code": "$1 Code 󰨞",
+            // "(.*)Spotify.*": "$1 Spotify 󰓇",
+            // "(.*) - Discord": "$1  "
+        }
+    },
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format": "{icon}",
         "format-icons": {
             "default": ""
         },
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": []
-      }
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
+    // "hyprland/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "on-click": "activate",
+    //     "on-scroll-up": "hyprctl dispatch workspace e-1",
+    //     "on-scroll-down": "hyprctl dispatch workspace e+1",
+    //     "format": "{icon}",
+    //     "format-icons": {
+    //         "default": ""
+    //     },
+    //     "persistent-workspaces": {
+    //         "1": [],
+    //         "2": [],
+    //         "3": []
+    //     }
+    // },
     "memory": {
         "interval": 2,
         "format": "󰾅 {used}GB",
@@ -99,7 +110,6 @@
         "tooltip": true,
         "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
     },
-
     "backlight": {
         "interval": 2,
         "align": 0,
@@ -124,12 +134,10 @@
         "on-scroll-down": "~/.config/hypr/scripts/brightness.sh down",
         "smooth-scrolling-threshold": 1
     },
-
     "tray": {
         "icon-size": 18,
         "spacing": 10
     },
-
     "clock": {
         "format": " {:%I:%M %p}",
         "format-alt": " {:%R 󰃭 %d·%m·%Y}",
@@ -155,82 +163,102 @@
             "on-scroll-down": "shift_up"
         }
     },
-
     "battery": {
-	"interval": 20,
-	"align": 0,
-	"rotate": 0,
-	"full-at": 100,
-	"design-capacity": false,
-	"states": {
-		"good": 95,
-		"warning": 30,
-		"critical": 20
-	},
-	"format": "{icon} {capacity}%",
-	"format-charging": " {capacity}%",
-	"format-plugged": "󱘖 {capacity}%",
-	"format-alt-click": "click",
-	"format-full": "{icon} Full",
-	"format-alt": "{icon} {time}",
-	"format-icons": [
-		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-	    ],
-	"format-time": "{H}h {M}min",
-	"tooltip": true,
-	"tooltip-format": "{timeTo} {power}w"
+        "interval": 20,
+        "align": 0,
+        "rotate": 0,
+        "full-at": 100,
+        "design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "󱘖 {capacity}%",
+        "format-alt-click": "click",
+        "format-full": "{icon} Full",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+        "tooltip-format": "{timeTo} {power}w"
     },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}  {format_source}",
-    "format-bluetooth": "{icon} {volume}  {format_source}",
-    "format-bluetooth-muted": "{icon} {format_source}",
-    "format-muted": "󰝟",
-    "format-source": " {volume} ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphones": [
-        " ",
-        " ",
-        " "
-      ],
-      "handsfree": "󰴸",
-      "headset": [
-        " ",
-        " ",
-        " "
-      ],
-      "phone": [
-        " ",
-        " ",
-        " "
-      ],
-      "portable": [
-        " ",
-        " ",
-        " "
-      ],
-      "car": [
-        " ",
-        " ",
-        " "
-      ],
-      "default": [
-        "",
-        "",
-        ""
-      ]
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "tooltip": false,
+        "format-muted": " ",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "on-click-right": "pavucontrol",
+        //"format": "{icon} {volume}  {format_source}",
+        "format-bluetooth": "{icon} {volume}", // {format_source}",
+        "format-bluetooth-muted": "{icon}",// {format_source}",
+        "format-source": " {volume} ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": [
+                " ",
+                " ",
+                " "
+            ],
+            "handsfree": "󰴸",
+            "headset": [
+                " ",
+                " ",
+                " "
+            ],
+            "phone": [
+                " ",
+                " ",
+                " "
+            ],
+            "portable": [
+                " ",
+                " ",
+                " "
+            ],
+            "car": [
+                " ",
+                " ",
+                " "
+            ],
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
     },
-    "on-click": "sleep 0.1 && pavucontrol"
-  },   
-
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " ",
+        "on-click": "pamixer --default-source -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    },
 
     // custom modules 👇
     "custom/launch_rofi": {
-        "format": "󰣛",   // for fedora
+        "format": "󰣛", // for fedora
         "on-click": "~/.config/rofi/launchers/type-7/launcher.sh",
         "tooltip": false
     },
-
-
 }

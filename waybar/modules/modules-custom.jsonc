@@ -27,8 +27,8 @@
     "custom/clipboard": {
         "format": "󰅌 {}",
         "exec": "~/.config/hypr/scripts/cliphist.sh l",
-        "on-click": "~/.config/hypr/scripts/cliphist.sh c",
-        "on-click-right": "~/.config/hypr/scripts/cliphist.sh w",
+        "on-click": "~/.config/rofi/scripts/cliphist.sh c",
+        "on-click-right": "~/.config/rofi/scripts/cliphist.sh w",
         "interval": 1,
         "tooltip-format": "You have {} items copied"
     },

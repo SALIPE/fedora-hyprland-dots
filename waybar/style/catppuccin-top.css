@@ -10,8 +10,9 @@
 @import "style/mocha.css";
 
 window#waybar {
-  background-color: shade(@base, 0.9);
-  border-radius: 25px;
+  background-color: @crust;
+  /* shade(@base, 0.8); */
+  border-radius: 10px 10px 0px 0px;
 }
 
 tooltip {
@@ -90,7 +91,7 @@ tooltip label {
 #backlight {
   background: @crust;
   opacity: 1;
-  padding: 0px 10px;
+  padding: 0px 5px;
   margin: 2px 0px;
 }
 
@@ -143,7 +144,7 @@ tooltip label {
 
 #custom-notify, #custom-notification {
   border-radius: 15px;
-  padding: 0 15px;
+  /*padding: 0 15px;*/
 }
 
 #custom-nightlight {
@@ -220,7 +221,9 @@ tooltip label {
 #backlight {
   background-color: @crust;
   color: @flamingo;
-  padding: 0 5px;
+  padding: 0px 5px;
+  padding-right: 15px;
+  margin-right: 5px;
   font-size: 14px;
   border-radius: 0 15px 15px 0;
 }
@@ -259,6 +262,7 @@ tooltip label {
 #workspaces {
   padding-right: 15px;
   padding-left: 15px;
+  margin-left: 10px;
   border-radius: 15px;
 }
 
@@ -278,7 +282,7 @@ tooltip label {
 
 #custom-launch_rofi {
   color: #89b4fa;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-right: 0px;
   padding: 0 15px;
   padding-right: 10px;
@@ -297,18 +301,14 @@ tooltip label {
 #clock {
   color: @sapphire;
   border-radius: 15px;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 14px;
 }
 
 #pulseaudio.microphone {
   color: @green;
-  margin-right: 10px;
+  margin-right: 5px;
   border-left: 0px;
   border-right: 0px;
   border-radius: 0 15px 15px 0;
 }
-
-

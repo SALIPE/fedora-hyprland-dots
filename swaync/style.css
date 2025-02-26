@@ -1,11 +1,1 @@
-/***
- *    ┏┓┓ ┏┏┓┓┏┳┓┏┓
- *    ┗┓┃┃┃┣┫┗┫┃┃┃ 
- *    ┗┛┗┻┛┛┗┗┛┛┗┗┛
- *                 
- */
-
-
-@import '../../.cache/wal/colors-waybar.css';
-@import 'themes/hyprwal/notifications.css';
-@import 'themes/hyprwal/central_control.css';
+styles/style.css
