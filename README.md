@@ -14,11 +14,10 @@ This configuration was maded using other repositories configuration:
 ## Screenshots
 ![screenshot](prints/gruvbox_wallpaper.png)
 
-| ![screenshot](prints/gruvbox_notification.png) | ![screenshot](prints/wallpaper.png)) |
+| ![screenshot](prints/gruvbox_notification.png) | ![screenshot](prints/wallpaper.png) |
 |---|---|
-| ![screenshot](prints/rofi.png) | ![screenshot](prints/windows.png)) |
-|---|---|
-| ![screenshot](prints/rofisystem.png) | ![screenshot](prints/notification.png)) |
+| ![screenshot](prints/rofi.png) | ![screenshot](prints/windows.png) |
+| ![screenshot](prints/rofisystem.png) | ![screenshot](prints/notifcation.png) |
 
 
 
@@ -26,13 +25,16 @@ This configuration was maded using other repositories configuration:
 - Spotify
 - Zen Browser
 - nm-applet
+- blueman-manager
 - Rofi
+- nemo file-manager
 - Waybar
-- Hyprpaper
+- Hypridle
 - Hyprlock
 - htop
 - Waypaper
 - SwayNC
 - Pavucontrol
+- pamixer
 - Obsidian
 - cliphist
