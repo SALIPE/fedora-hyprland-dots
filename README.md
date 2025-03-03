@@ -8,15 +8,18 @@ This configuration was maded using other repositories configuration:
 - [Wallpapers](https://github.com/dharmx/walls)
 - [Basic Configurations](https://github.com/Abhra00/HyprWal)
 - [Hypalando](https://github.com/MizxGaming/Hypalando)
-
+- [GruvBox Wallpaper](https://www.reddit.com/r/wallpaper/comments/kf0frx/1920x1080_all_resolutions_available_dark_light/#lightbox)
 --- 
 
 ## Screenshots
-![screenshot](prints/wallpaper.png)
+![screenshot](prints/gruvbox_wallpaper.png)
 
+| ![screenshot](prints/gruvbox_notification.png) | ![screenshot](prints/wallpaper.png)) |
+|---|---|
 | ![screenshot](prints/rofi.png) | ![screenshot](prints/windows.png)) |
 |---|---|
 | ![screenshot](prints/rofisystem.png) | ![screenshot](prints/notification.png)) |
+
 
 
 ## Installed Programs

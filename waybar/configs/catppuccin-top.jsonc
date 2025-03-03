@@ -18,7 +18,7 @@
 
     "modules-left": [
         "custom/launch_rofi",
-        "hyprland/window", 
+        //"hyprland/window", 
         "wlr/taskbar",
         "custom/spotify"
 

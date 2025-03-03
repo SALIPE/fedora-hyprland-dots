@@ -139,8 +139,8 @@
         "spacing": 10
     },
     "clock": {
-        "format": " {:%I:%M %p}",
-        "format-alt": " {:%R 󰃭 %d·%m·%Y}",
+        "format-alt": " {:%I:%M %p}",
+        "format": " {:%R 󰃭 %d·%m·%Y}",
         "on-clock-right": "exec gnome-calendar",
         "tooltip": true,
         "tooltip-format": "<span>{calendar}</span>",

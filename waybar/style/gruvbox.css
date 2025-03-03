@@ -1,0 +1,245 @@
+/***
+ *    ┓ ┏┏┓┓┏┳┓┏┓┳┓  ┏┓┏┓┏┓
+ *    ┃┃┃┣┫┗┫┣┫┣┫┣┫  ┃ ┗┓┗┓
+ *    ┗┻┛┛┗┗┛┻┛┛┗┛┗  ┗┛┗┛┗┛
+ *                         
+ */
+
+
+
+@import url('../../.cache/wal/colors-waybar.css');
+
+@import "style/mocha.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "MesloLGS Nerd Font", "Font Awesome";
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+
+window#waybar {
+    background-color: @color0;
+    border-radius: 10px 10px 0px 0px;
+    border-color: @color2;
+    border-width: 2px 2px 0px 2px;
+    border-style: solid;
+
+}
+
+tooltip {
+    background: @color0;
+    opacity: 1;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @color1;
+}
+
+tooltip label {
+  font-size: 16px;
+  color: @blue;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: @color2;
+  margin-right: 0px;
+  background-color: @color0;
+}
+
+#workspaces button.active {
+  color: @color1;
+}
+
+#workspaces button.focused {
+  color: @color1;
+  background: @color0;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  background: @color0;
+}
+
+#workspaces button:hover {
+  background: @color0;
+  color: @color4;
+}
+
+#custom-launch_rofi,
+#custom-lock_screen,
+#custom-light_dark,
+#custom-power,
+#custom-reboot,
+#custom-logout,
+#custom-lock,
+#custom-power_profile,
+#custom-weather,
+#custom-updater,
+#window,
+#cpu,
+#disk,
+#idle_inhibitor,
+#custom-updates,
+#custom-clipboard,
+#custom-wallpaper-change,
+#memory,
+#clock,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#workspaces,
+#taskbar,
+#battery,
+#mpris,
+#custom-nightlight,
+#hyprland-keyboard,
+#custom-notification,
+#backlight {
+  background: @color0;
+  opacity: 1;
+  margin-right: 10px;
+  margin:2px 5px;
+}
+
+#memory,
+#cpu,
+#disk,
+#temperature {
+  background-color: transparent;
+}
+
+#memory {
+  color: @color6;
+}
+
+#idle_inhibitor {
+  font-size: 15px;
+  padding: 0 15px;
+  background: @color0;
+  color: @pink;
+  margin-right: 0px;
+}
+
+#custom-nightlight {
+  color: @color5;
+}
+
+#battery {
+  color: #a6e3a1;
+  background-color: @color0;
+  margin-right: 0;
+  font-size: 14px;
+  padding-left: 15px;
+
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #333333;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-clipboard {
+  font-size: 14px;
+  color: @color7;
+  padding-right: 10px;
+}
+
+
+#taskbar {
+  background-color: transparent;
+  margin-right: 2px;
+}
+
+
+#custom-updater {
+    padding: 0 15px;
+    margin-left: 5px;
+    margin-right: 10px;
+    color: @teal;
+}
+
+#backlight {
+  background-color: @color0;
+  color: @color5;
+  padding-right: 15px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+
+#tray {
+  margin-right: 5px;
+  background-color: transparent;
+}
+
+#custom-light_dark {
+  margin-left: 10px;
+  padding: 0 15px;
+}
+
+
+#workspaces {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+#custom-power_profile {
+  color: #a6e3a1;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#window {
+    color: @teal;
+    border-radius: 0 15px 15px 0;
+    margin-left: 0px;
+    margin-right: 5px;
+    padding-right: 15px;
+}
+
+#custom-launch_rofi {
+    color: #89b4fa;
+    margin-left: 15px;
+    margin-right: 0px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+#pulseaudio {
+    background-color: @color0;
+    color: @color4;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 15px;
+}
+
+#clock {
+    margin-right:10px;
+    color: @color4;
+    font-size: 14px;
+}
+
+#pulseaudio.microphone {
+  color: @color6;
+  margin-right: 5px;
+
+}
