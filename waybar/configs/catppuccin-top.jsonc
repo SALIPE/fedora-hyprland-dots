@@ -18,6 +18,7 @@
 
     "modules-left": [
         "custom/launch_rofi",
+        "custom/separator",
         //"hyprland/window", 
         "wlr/taskbar",
         "custom/spotify"
@@ -32,14 +33,18 @@
     "modules-right": [ 
         "tray", 
         "memory", 
+        "custom/separator",
         "pulseaudio",
         "pulseaudio#microphone",
+        "custom/separator",
         "idle_inhibitor", 
         "custom/clipboard", 
+        "custom/separator",
         "battery", 
         "backlight",
+        "clock",
         "custom/notification",
-        "clock"
+       
 
     ],
     "custom/spotify": {
@@ -58,7 +63,7 @@
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "format": "{icon}",
+        "format": "{name}",
         "format-icons": {
             "default": ""
           },
@@ -67,5 +72,10 @@
             "2": [],
             "3": []
         }
-    }
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
 }

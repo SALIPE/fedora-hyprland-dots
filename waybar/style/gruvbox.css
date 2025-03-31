@@ -22,9 +22,9 @@
 
 
 window#waybar {
-    background-color: @color0;
+    background-color: @background;
     border-radius: 10px 10px 0px 0px;
-    border-color: @color2;
+    border-color: @foreground;
     border-width: 2px 2px 0px 2px;
     border-style: solid;
 
@@ -41,33 +41,56 @@ tooltip {
 
 tooltip label {
   font-size: 16px;
-  color: @blue;
+  color: @color7;
+}
+
+#workspaces {
+  color: @color0;
+  background: @color0;
+  margin: 4px 4px;
+  padding: 5px 5px;
+  border-radius: 16px;
 }
 
 #workspaces button {
-  padding: 5px;
-  color: @color2;
-  margin-right: 0px;
-  background-color: @color0;
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 12px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color4);
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: @color1;
-}
-
-#workspaces button.focused {
-  color: @color1;
-  background: @color0;
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 12px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color4);
+  transition: all 0.2s ease-in-out;
+  opacity: 1.0;
+  min-width: 40px;
 }
 
 #workspaces button.urgent {
-  color: #11111b;
-  background: @color0;
+  font-weight: bold;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 12px;
+  color: @color0;
+  background: linear-gradient(45deg, @color6, @color12);
+  transition: all 0.2s ease-in-out;
+  opacity: 1.0;
+  min-width: 40px;
 }
 
 #workspaces button:hover {
-  background: @color0;
-  color: @color4;
+  background: linear-gradient(45deg, @color8, @color4);
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
 }
 
 #custom-launch_rofi,
@@ -120,14 +143,13 @@ tooltip label {
 
 #idle_inhibitor {
   font-size: 15px;
-  padding: 0 15px;
+  padding: 0 5px;
   background: @color0;
   color: @pink;
-  margin-right: 0px;
 }
 
 #custom-nightlight {
-  color: @color5;
+  color: @pink;
 }
 
 #battery {
@@ -135,7 +157,6 @@ tooltip label {
   background-color: @color0;
   margin-right: 0;
   font-size: 14px;
-  padding-left: 15px;
 
 }
 
@@ -158,40 +179,35 @@ tooltip label {
 #custom-clipboard {
   font-size: 14px;
   color: @color7;
-  padding-right: 10px;
 }
 
 
 #taskbar {
-  background-color: transparent;
-  margin-right: 2px;
+    background-color: transparent;
+    margin-right: 2px;
 }
 
+#custom-notification{
+    color:@foreground;
+    margin-right: 15px;
+}    
 
-#custom-updater {
-    padding: 0 15px;
-    margin-left: 5px;
-    margin-right: 10px;
-    color: @teal;
+#custom-separator {
+  color: @foreground;
+  margin: 0 5px;
 }
 
 #backlight {
-  background-color: @color0;
-  color: @color5;
-  padding-right: 15px;
-  margin-right: 5px;
-  font-size: 14px;
+    background-color: @color0;
+    color: @flamingo;
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 
 #tray {
   margin-right: 5px;
   background-color: transparent;
-}
-
-#custom-light_dark {
-  margin-left: 10px;
-  padding: 0 15px;
 }
 
 
@@ -226,7 +242,7 @@ tooltip label {
 
 #pulseaudio {
     background-color: @color0;
-    color: @color4;
+    color: @blue;
     border-left: 0px;
     border-right: 0px;
     border-radius: 15px;
@@ -234,12 +250,12 @@ tooltip label {
 
 #clock {
     margin-right:10px;
-    color: @color4;
+    color: @foreground;
     font-size: 14px;
 }
 
 #pulseaudio.microphone {
-  color: @color6;
+  color: @green;
   margin-right: 5px;
 
 }
