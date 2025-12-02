@@ -4,48 +4,45 @@
         "$HOME/.config/waybar/modules/modules-custom.jsonc"
     ],
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
-    "height": 25,
-    "margin-top": 0,
+    "height": 34,
+    "margin-top": 5,
     "padding-bottom": 5,
-    "margin-left": 5,
-    "margin-right": 5,
-
+    "margin-left": 10,
+    "margin-right": 10,
     "modules-left": [
         "custom/launch_rofi",
         "custom/separator",
-        //"hyprland/window", 
-        "wlr/taskbar",
-        "custom/spotify"
-
+        "clock",
+        "custom/separator",
+    //"hyprland/window", 
+    "wlr/taskbar",
+    "custom/spotify"
     ],
-
     "modules-center": [
-        "hyprland/workspaces",
+
+        "hyprland/workspaces"
 
     ],
-
-    "modules-right": [ 
-        "tray", 
-        "memory", 
+    "modules-right": [
+        "tray",
+        "memory",
         "custom/separator",
         "pulseaudio",
         "pulseaudio#microphone",
-        "custom/separator",
-        "idle_inhibitor", 
-        "custom/clipboard", 
-        "custom/separator",
-        "battery", 
-        "backlight",
-        "clock",
-        "custom/notification",
-       
-
+    "custom/separator",
+    "idle_inhibitor",
+    "custom/clipboard",
+    "custom/separator",
+    "battery",
+    "backlight",
+    "custom/separator",
+    "custom/notification"
     ],
     "custom/spotify": {
         "exec": "~/.config/hypr/scripts/songdetail.sh",
@@ -59,23 +56,15 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        "all-outputs": false,
         "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "format": "{name}",
-        "format-icons": {
-            "default": ""
-          },
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": []
-        }
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "format": "{name}"
     },
     "custom/separator": {
         "format": "|",
         "interval": "once",
         "tooltip": false
-    },
+    }
 }

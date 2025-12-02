@@ -1,0 +1,193 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "margin-bottom": -1,
+    "passthrough": false,
+    "height": 32,
+    "modules-left": [
+        "custom/launch_rofi",
+        "custom/separator",
+        "wlr/taskbar",
+        "custom/spotify"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "memory",
+        "custom/separator",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "custom/separator",
+        "idle_inhibitor",
+        "custom/clipboard",
+        "custom/separator",
+        "battery",
+        "backlight",
+        "clock",
+        "custom/notification"
+    ],
+    "custom/spotify": {
+        "exec": "~/.config/hypr/scripts/songdetail.sh",
+        "exec-if": "pgrep spotify",
+        "interval": 1,
+        "on-click-middle": "playerctl --player=spotify play-pause",
+        "on-click-right": "playerctl next --player spotify",
+        "on-click": "playerctl previous --player spotify",
+        "escape": true,
+        "tooltip": false
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "ENG",
+        "format-ru": "РУС"
+    },
+    "hyprland/workspaces": {
+        "icon-size": 32,
+        "spacing": 14,
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1"
+    },
+    "custom/os_button": {
+        "format": "󰣇",
+        "on-click": "tofi-drun",
+        "tooltip": false
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/hwmon/hwmon0/device/gpu_busy_percent",
+        "format": "RX 6600 {}% ",
+        "return-type": "",
+        "interval": 1
+    },
+    "temperature#temp2": {
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "input-filename": "temp1_input",
+        "critical-threshold": 100,
+        "tooltip": true,
+        "format-critical": "({temperatureC}°C)",
+        "format": "({temperatureC}°C)"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "   {usage}%",
+        "max-length": 10
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "input-filename": "temp1_input",
+        "critical-threshold": 75,
+        "tooltip": true,
+        "format-critical": "({temperatureC}°C) ",
+        "format": "({temperatureC}°C)"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "unit": "GB",
+        "tooltip-format": "Available {free} of {total}"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "    {percentage}%",
+        "max-length": 11,
+        "tooltip": true,
+        "tooltip-format": "RAM - {used:0.1f}GiB used"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "spacing": 4,
+        "sort-by-app-id": false,
+        "markup": true,
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+        "ignore-list": [],
+        "on-click": "minimize-raise",
+    },
+    "hyprland/window": {
+        "separate-outputs": true,
+        "icon": false,
+        "format": "{}",
+        "max-length": 35,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - zsh": "> [$1]"
+        }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 4
+    },
+    "custom/weather": {
+        "format": "{}°  ",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --location 'Cape Town,South Africa'",
+        "return-type": "json"
+    },
+    "clock": {
+        "format": "      {:%R\n %d.%m.%Y}",
+        "markup": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "network": {
+        "tooltip-format": "{ifname} {gwaddr}",
+        "format-wifi": " {icon}",
+        "format-ethernet": " 󰀂 ",
+        "format-disconnected": "󰯡",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤢 ",
+            "󰤨 "
+        ]
+    },
+    "pulseaudio": {
+        "max-volume": 150,
+        "scroll-step": 5,
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        },
+        "on-click": "pwvucontrol"
+    }
+}

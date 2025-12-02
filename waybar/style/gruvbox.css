@@ -18,25 +18,26 @@
   font-weight: bold;
   font-size: 14px;
   min-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
 window#waybar {
-    background-color: @background;
-    border-radius: 10px 10px 0px 0px;
-    border-color: @foreground;
-    border-width: 2px 2px 0px 2px;
-    border-style: solid;
-
+  background-color: rgb(0, 0, 0);
+  border-radius: 16px;
+  border-color: rgb(0, 0, 0);
 }
 
 tooltip {
-    background: @color0;
-    opacity: 1;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @color1;
+  background: @color0;
+  opacity: 1;
+  border-radius: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @color1;
+  /* Adicionando sombra ao tooltip também */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 tooltip label {
@@ -46,7 +47,7 @@ tooltip label {
 
 #workspaces {
   color: @color0;
-  background: @color0;
+  background: rgb(0, 0, 0);
   margin: 4px 4px;
   padding: 5px 5px;
   border-radius: 16px;
@@ -124,10 +125,11 @@ tooltip label {
 #hyprland-keyboard,
 #custom-notification,
 #backlight {
-  background: @color0;
+  background: rgb(0, 0, 0);
   opacity: 1;
   margin-right: 10px;
-  margin:2px 5px;
+  margin: 2px 5px;
+
 }
 
 #memory,
@@ -144,7 +146,7 @@ tooltip label {
 #idle_inhibitor {
   font-size: 15px;
   padding: 0 5px;
-  background: @color0;
+  background: rgb(0, 0, 0);
   color: @pink;
 }
 
@@ -154,7 +156,7 @@ tooltip label {
 
 #battery {
   color: #a6e3a1;
-  background-color: @color0;
+  background-color: rgb(0, 0, 0);
   margin-right: 0;
   font-size: 14px;
 
@@ -183,14 +185,14 @@ tooltip label {
 
 
 #taskbar {
-    background-color: transparent;
-    margin-right: 2px;
+  background-color: transparent;
+  margin-right: 2px;
 }
 
-#custom-notification{
-    color:@foreground;
-    margin-right: 15px;
-}    
+#custom-notification {
+  color: @foreground;
+  margin-right: 15px;
+}
 
 #custom-separator {
   color: @foreground;
@@ -198,10 +200,10 @@ tooltip label {
 }
 
 #backlight {
-    background-color: @color0;
-    color: @flamingo;
-    margin-right: 5px;
-    font-size: 14px;
+  background-color: rgb(0, 0, 0);
+  color: @flamingo;
+  margin-right: 5px;
+  font-size: 14px;
 }
 
 
@@ -225,33 +227,33 @@ tooltip label {
 }
 
 #window {
-    color: @teal;
-    border-radius: 0 15px 15px 0;
-    margin-left: 0px;
-    margin-right: 5px;
-    padding-right: 15px;
+  color: @teal;
+  border-radius: 0 15px 15px 0;
+  margin-left: 0px;
+  margin-right: 5px;
+  padding-right: 15px;
 }
 
 #custom-launch_rofi {
-    color: #89b4fa;
-    margin-left: 15px;
-    margin-right: 0px;
-    padding-right: 10px;
-    font-size: 15px;
+  color: #89b4fa;
+  margin-left: 15px;
+  margin-right: 0px;
+  padding-right: 10px;
+  font-size: 15px;
 }
 
 #pulseaudio {
-    background-color: @color0;
-    color: @blue;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  color: @blue;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 15px;
 }
 
 #clock {
-    margin-right:10px;
-    color: @foreground;
-    font-size: 14px;
+  margin-right: 10px;
+  color: @foreground;
+  font-size: 14px;
 }
 
 #pulseaudio.microphone {
