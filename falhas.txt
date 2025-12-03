@@ -1,0 +1,13 @@
+apache-netbeans
+code
+containerd.io
+docker-buildx-plugin
+docker-ce
+docker-ce-cli
+docker-compose-plugin
+eduvpn-client
+fros-gnome
+gdk-pixbuf2-modules
+minikube
+python3.8
+terraform
